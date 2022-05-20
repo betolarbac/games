@@ -3,6 +3,7 @@ import api from "../../services/api";
 
 
 interface ResponseData {
+    
     id: string;
     name: string;
     metacritic: string;
@@ -27,14 +28,22 @@ export function Listgames() {
   
     return (
         <>
-        <h1>game</h1>
-        <ul>{games.map(games => {
+            
+          
+           <div className="flex justify-center ">
+           <div className=" grid grid-cols-3 gap-4  ">{games.map(games => {
             return (
-                <li>
-                    <span>{games.name}</span>
-                </li>
+                <div className="">
+                    <img src={games.background_image} className="w-96 h-48 rounded-lg " alt="" />
+                    <h2 className=" mx-2 -mt-8 mb-6 text-lg font-medium">{games.name}</h2>
+
+                    
+                </div>
             )
-        })}</ul>
+        })}</div>
+           
+           </div>
+            
         </>
     )
 }
